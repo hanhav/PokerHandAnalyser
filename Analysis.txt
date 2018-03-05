@@ -1,0 +1,178 @@
+MANUAL TESTING OUTPUT
+
+--- DEALT HANDS ---
+First Hand
+3 of Spades, 7 of Diamonds, Jack of Diamonds, Jack of Spades, King of Clubs
+Second Hand
+4 of Hearts, 5 of Hearts, 6 of Hearts, 7 of Hearts, 8 of Hearts
+Third Hand
+4 of Clubs, 7 of Spades, 8 of Clubs, 10 of Hearts, Queen of Hearts
+
+Straightflush !!!
+
+--- DEALT HANDS ---
+First Hand
+6 of Clubs, 10 of Diamonds, 10 of Hearts, Jack of Diamonds, Queen of Spades
+Second Hand
+Ace of Clubs, 2 of Clubs, 3 of Clubs, 4 of Clubs, Queen of Clubs
+Third Hand
+4 of Spades, 6 of Diamonds, 7 of Clubs, 8 of Spades, King of Clubs
+
+Flush !!!
+
+--- DEALT HANDS ---
+First Hand
+9 of Diamonds, 10 of Hearts, Jack of Spades, Queen of Diamonds, King of Diamonds
+Second Hand
+3 of Spades, 5 of Spades, 10 of Spades, Jack of Hearts, Queen of Clubs
+Third Hand
+6 of Spades, 7 of Spades, Queen of Hearts, King of Hearts, King of Clubs
+
+Straight !!!
+
+--- DEALT HANDS ---
+First Hand
+Ace of Spades, 4 of Diamonds, 7 of Clubs, 8 of Clubs, 10 of Diamonds
+Second Hand
+5 of Hearts, 7 of Hearts, 9 of Diamonds, Queen of Diamonds, King of Diamonds
+Third Hand
+Ace of Hearts, 5 of Diamonds, 5 of Clubs, 9 of Clubs, 9 of Hearts
+
+Two pairs !!!
+
+
+
+JUNIT TESTING OUTPUT
+
+--- HandTest: analyzeCardHand() -> LOW STRAIGHT
+Ace of Hearts, 2 of Spades, 3 of Diamonds, 4 of Hearts, 5 of Spades
+--- HandTest: analyzeCardHand() -> FLUSH
+2 of Clubs, 3 of Clubs, 5 of Clubs, 7 of Clubs, 10 of Clubs
+--- HandTest: analyzeCardHand() -> StraightFlush (Low Ace)
+Ace of Spades, 2 of Spades, 3 of Spades, 4 of Spades, 5 of Spades
+--- HandTest: analyzeCardHand() -> StraightFlush (High Ace)
+10 of Clubs, Jack of Clubs, Queen of Clubs, King of Clubs, Ace of Hearts
+--- HandTest: analyzeCardHand() -> HIGH STRAIGHT
+10 of Hearts, Jack of Spades, Queen of Diamonds, King of Spades, Ace of Hearts
+--- HandTest: analyzeCardHand() -> Two Pair
+Ace of Diamonds, 10 of Spades, 10 of Spades, Jack of Hearts, Jack of Clubs
+--- DeckTest: dealCard() ---
+Cards in order by suit, without shuffling: 
+Ace of Hearts
+2 of Hearts
+3 of Hearts
+4 of Hearts
+5 of Hearts
+6 of Hearts
+7 of Hearts
+8 of Hearts
+9 of Hearts
+10 of Hearts
+Jack of Hearts
+Queen of Hearts
+King of Hearts
+Ace of Diamonds
+2 of Diamonds
+3 of Diamonds
+4 of Diamonds
+5 of Diamonds
+6 of Diamonds
+7 of Diamonds
+8 of Diamonds
+9 of Diamonds
+10 of Diamonds
+Jack of Diamonds
+Queen of Diamonds
+King of Diamonds
+Ace of Clubs
+2 of Clubs
+3 of Clubs
+4 of Clubs
+5 of Clubs
+6 of Clubs
+7 of Clubs
+8 of Clubs
+9 of Clubs
+10 of Clubs
+Jack of Clubs
+Queen of Clubs
+King of Clubs
+Ace of Spades
+2 of Spades
+3 of Spades
+4 of Spades
+5 of Spades
+6 of Spades
+7 of Spades
+8 of Spades
+9 of Spades
+10 of Spades
+Jack of Spades
+Queen of Spades
+King of Spades
+
+--- Decktest: shuffleDeck() ---
+Shuffled cards:
+1: Ace of Clubs
+2: 6 of Clubs
+3: 3 of Clubs
+4: King of Spades
+5: 5 of Diamonds
+6: 2 of Hearts
+7: 10 of Diamonds
+8: 10 of Spades
+9: Jack of Clubs
+10: 8 of Hearts
+11: 5 of Hearts
+12: 8 of Clubs
+13: 2 of Clubs
+14: Ace of Diamonds
+15: 5 of Spades
+16: 10 of Clubs
+17: Jack of Spades
+18: 7 of Spades
+19: 7 of Clubs
+20: Queen of Hearts
+21: 8 of Spades
+22: 2 of Spades
+23: 7 of Diamonds
+24: King of Diamonds
+25: Jack of Hearts
+26: 9 of Clubs
+27: 5 of Clubs
+28: Ace of Spades
+29: Queen of Diamonds
+30: 4 of Spades
+31: Jack of Diamonds
+32: 4 of Diamonds
+33: 3 of Spades
+34: Ace of Hearts
+35: 3 of Diamonds
+36: 9 of Hearts
+37: Queen of Spades
+38: Queen of Clubs
+39: 6 of Hearts
+40: 6 of Diamonds
+41: 4 of Clubs
+42: King of Clubs
+43: 9 of Diamonds
+44: 7 of Hearts
+45: 6 of Spades
+46: 3 of Hearts
+47: 10 of Hearts
+48: 2 of Diamonds
+49: 8 of Diamonds
+50: 9 of Spades
+51: King of Hearts
+52: 4 of Hearts
+
+--- DeckTest: testDeckShuffleDeck() -- OK -- Error Margin is 5 and error counter is 0 ---
+--- Shuffled deck and Unsuffled deck printed out for manual inspection ---
+[Ace of Clubs, 6 of Clubs, 3 of Clubs, King of Spades, 5 of Diamonds, 2 of Hearts, 10 of Diamonds, 10 of Spades, Jack of Clubs, 8 of Hearts, 5 of Hearts, 8 of Clubs, 2 of Clubs, Ace of Diamonds, 5 of Spades, 10 of Clubs, Jack of Spades, 7 of Spades, 7 of Clubs, Queen of Hearts, 8 of Spades, 2 of Spades, 7 of Diamonds, King of Diamonds, Jack of Hearts, 9 of Clubs, 5 of Clubs, Ace of Spades, Queen of Diamonds, 4 of Spades, Jack of Diamonds, 4 of Diamonds, 3 of Spades, Ace of Hearts, 3 of Diamonds, 9 of Hearts, Queen of Spades, Queen of Clubs, 6 of Hearts, 6 of Diamonds, 4 of Clubs, King of Clubs, 9 of Diamonds, 7 of Hearts, 6 of Spades, 3 of Hearts, 10 of Hearts, 2 of Diamonds, 8 of Diamonds, 9 of Spades, King of Hearts, 4 of Hearts]
+[Ace of Hearts, 2 of Hearts, 3 of Hearts, 4 of Hearts, 5 of Hearts, 6 of Hearts, 7 of Hearts, 8 of Hearts, 9 of Hearts, 10 of Hearts, Jack of Hearts, Queen of Hearts, King of Hearts, Ace of Diamonds, 2 of Diamonds, 3 of Diamonds, 4 of Diamonds, 5 of Diamonds, 6 of Diamonds, 7 of Diamonds, 8 of Diamonds, 9 of Diamonds, 10 of Diamonds, Jack of Diamonds, Queen of Diamonds, King of Diamonds, Ace of Clubs, 2 of Clubs, 3 of Clubs, 4 of Clubs, 5 of Clubs, 6 of Clubs, 7 of Clubs, 8 of Clubs, 9 of Clubs, 10 of Clubs, Jack of Clubs, Queen of Clubs, King of Clubs, Ace of Spades, 2 of Spades, 3 of Spades, 4 of Spades, 5 of Spades, 6 of Spades, 7 of Spades, 8 of Spades, 9 of Spades, 10 of Spades, Jack of Spades, Queen of Spades, King of Spades]
+--- CardTest: toString()
+--- CardTest: toString() -- OK
+--- CardTest: getRank()
+--- CardTest: getRank() -- OK
+--- CardTest: getSuit()
+--- CardTest: getSuit() -- OK
