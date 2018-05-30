@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Hannu Havila
+ * @author HanHav
  */
 public class HandTest {
 
@@ -17,7 +17,7 @@ public class HandTest {
     public void printOutHand() {
         System.out.println(instance);
     }
-
+    
     @Test
     public void testIfHandHasFlush() {
         System.out.println("--- HandTest: analyzeCardHand() -> FLUSH");
@@ -55,6 +55,18 @@ public class HandTest {
     }
     
     @Test
+    public void testIfHandHasPair() {
+        System.out.println("--- HandTest: analyzeCardHand() -> Pair");
+        cards[0] = new Card(Card.SPADE, 7);
+        cards[1] = new Card(Card.DIAMOND, 9);
+        cards[2] = new Card(Card.DIAMOND, 0);
+        cards[3] = new Card(Card.HEART, 8);
+        cards[4] = new Card(Card.CLUB, 9);
+        instance = new Hand(cards);
+        assertEquals("Expected Pair", Hand.PAIR, instance.analyzeCardHand());
+    }
+    
+    @Test
     public void testIfHandHasTwoPair() {
         System.out.println("--- HandTest: analyzeCardHand() -> Two Pair");
         cards[0] = new Card(Card.SPADE, 9);
@@ -79,14 +91,38 @@ public class HandTest {
     }
     
     @Test
-    public void testIfHandHasStraightFlushWithHighAce() {
-        System.out.println("--- HandTest: analyzeCardHand() -> StraightFlush (High Ace)");
-        cards[0] = new Card(Card.CLUB, 9);
-        cards[1] = new Card(Card.CLUB, 10);
-        cards[2] = new Card(Card.CLUB, 11);
-        cards[3] = new Card(Card.CLUB, 12);
-        cards[4] = new Card(Card.CLUB, 0);
+    public void testIfHandHasThreeOfKind() {
+        System.out.println("--- HandTest: analyzeCardHand() -> THREE OF A KIND");
+        cards[0] = new Card(Card.SPADE, 7);
+        cards[1] = new Card(Card.DIAMOND, 4);
+        cards[2] = new Card(Card.HEART, 7);
+        cards[3] = new Card(Card.CLUB, 7);
+        cards[4] = new Card(Card.SPADE, 13);
         instance = new Hand(cards);
-        assertEquals("Expected Straightflush (High Ace)", Hand.STRAIGHTFLUSH, instance.analyzeCardHand());
+        assertEquals("Expected Three of a Kind", Hand.THREEOFAKIND, instance.analyzeCardHand());
+    }
+    
+    @Test
+    public void testIfHandHasFullHouse() {
+        System.out.println("--- HandTest: analyzeCardHand() -> FULL HOUSE");
+        cards[0] = new Card(Card.HEART, 8);
+        cards[1] = new Card(Card.SPADE, 8);
+        cards[2] = new Card(Card.DIAMOND, 8);
+        cards[3] = new Card(Card.HEART, 2);
+        cards[4] = new Card(Card.CLUB, 2);
+        instance = new Hand(cards);
+        assertEquals("Expected Full house", Hand.FULLHOUSE, instance.analyzeCardHand());
+    }
+    
+    @Test
+    public void testIfHandHasFourOfKind() {
+        System.out.println("--- HandTest: analyzeCardHand() -> FOUR OF A KIND");
+        cards[0] = new Card(Card.SPADE, 5);
+        cards[1] = new Card(Card.HEART, 5);
+        cards[2] = new Card(Card.CLUB, 2);
+        cards[3] = new Card(Card.HEART, 5);
+        cards[4] = new Card(Card.CLUB, 5);
+        instance = new Hand(cards);
+        assertEquals("Expected Four Of a Kind", Hand.FOUROFAKIND, instance.analyzeCardHand());
     }
 }

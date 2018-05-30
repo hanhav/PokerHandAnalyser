@@ -2,7 +2,7 @@ package pokerhandanalyser;
     
 /**
 *
-* @author Hannu Havila
+* @author HanHav
 */
 
 public class Main {

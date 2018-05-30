@@ -4,7 +4,7 @@ import java.util.Random;
 
 /**
 *
-* @author Hannu Havila
+* @author HanHav
 */
 
 public class Deck {

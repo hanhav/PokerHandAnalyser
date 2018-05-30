@@ -5,7 +5,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author Hannu Havila
+ * @author HanHav
  */
 public class CardTest {
     

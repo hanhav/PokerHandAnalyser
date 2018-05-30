@@ -46,16 +46,22 @@ JUNIT TESTING OUTPUT
 
 --- HandTest: analyzeCardHand() -> LOW STRAIGHT
 Ace of Hearts, 2 of Spades, 3 of Diamonds, 4 of Hearts, 5 of Spades
+--- HandTest: analyzeCardHand() -> Pair
+Ace of Diamonds, 8 of Spades, 9 of Hearts, 10 of Diamonds, 10 of Clubs
+--- HandTest: analyzeCardHand() -> FOUR OF A KIND
+3 of Clubs, 6 of Spades, 6 of Hearts, 6 of Hearts, 6 of Clubs
 --- HandTest: analyzeCardHand() -> FLUSH
 2 of Clubs, 3 of Clubs, 5 of Clubs, 7 of Clubs, 10 of Clubs
 --- HandTest: analyzeCardHand() -> StraightFlush (Low Ace)
 Ace of Spades, 2 of Spades, 3 of Spades, 4 of Spades, 5 of Spades
---- HandTest: analyzeCardHand() -> StraightFlush (High Ace)
-10 of Clubs, Jack of Clubs, Queen of Clubs, King of Clubs, Ace of Hearts
 --- HandTest: analyzeCardHand() -> HIGH STRAIGHT
 10 of Hearts, Jack of Spades, Queen of Diamonds, King of Spades, Ace of Hearts
 --- HandTest: analyzeCardHand() -> Two Pair
 Ace of Diamonds, 10 of Spades, 10 of Spades, Jack of Hearts, Jack of Clubs
+--- HandTest: analyzeCardHand() -> THREE OF A KIND
+5 of Diamonds, 8 of Spades, 8 of Hearts, 8 of Clubs, Ace of Spades
+--- HandTest: analyzeCardHand() -> FULL HOUSE
+3 of Hearts, 3 of Clubs, 9 of Hearts, 9 of Spades, 9 of Diamonds
 --- DeckTest: dealCard() ---
 Cards in order by suit, without shuffling: 
 Ace of Hearts

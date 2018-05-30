@@ -7,7 +7,7 @@ import org.junit.BeforeClass;
 
 /**
  *
- * @author Hannu Havila
+ * @author HanHav
  */
 public class DeckTest {
     

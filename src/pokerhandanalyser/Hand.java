@@ -4,20 +4,28 @@ import java.util.Arrays;
 
 /**
 *
-* @author Hannu Havila
+* @author HanHav
 */
 
 public class Hand {
-    final static int NOTHING = 0, STRAIGHTFLUSH = 1, FLUSH = 2, STRAIGHT = 3, TWOPAIR = 4;
+    final static int NOTHING = 0,
+            STRAIGHTFLUSH = 1,
+            FLUSH = 2,
+            STRAIGHT = 3,
+            TWOPAIR = 4,
+            PAIR = 5,
+            THREEOFAKIND = 6,
+            FULLHOUSE = 7,
+            FOUROFAKIND = 8;
     Card[] hand = new Card[5];
 
-    public Hand (Deck deck) {
+    protected Hand (Deck deck) {
         for (int i = 0; i < hand.length; i++) {
             hand[i] = deck.dealCard();
         }
     }
 
-    public Hand (Card[] cardHand) {
+    protected Hand (Card[] cardHand) {
         for (int i = 0; i < cardHand.length; i++) {
             hand[i] = cardHand[i];
         }
@@ -36,10 +44,16 @@ public class Hand {
         return print;
     }	
 
-    public int analyzeCardHand() {
+    protected int analyzeCardHand() {
         
         if (checkIfFlush() && checkIfStraight() == true) {
             return 1;
+        }
+        if (checkIfFourOfAKind() == true) {
+            return 8;
+        }
+        if (checkIfFullHouse() == true) {
+            return 7;
         }
         if (checkIfFlush() == true) {
             return 2;
@@ -47,14 +61,20 @@ public class Hand {
         if (checkIfStraight() == true) {
             return 3;
         }
+        if (checkIfThreeOfAKind() == true) {
+            return 6;
+        }
         if (checkIfTwoPair() == true) {
             return 4;
+        }
+        if (checkIfPair() == true){
+            return 5;
         } else {
             return 0;
         }
     }
     
-    public boolean checkIfStraight() {
+    private boolean checkIfStraight() {
         Arrays.sort(hand);
         boolean isStraight = true;
         
@@ -78,7 +98,7 @@ public class Hand {
         return false;
     }
      
-    public boolean checkIfFlush() {
+    private boolean checkIfFlush() {
         int comparableCard = hand[0].getSuit();
         
         for (int i = 0; i < 5; i++) {
@@ -90,19 +110,60 @@ public class Hand {
         return true;
     }
 
-    public boolean checkIfTwoPair() {
+    private boolean checkIfTwoPair() {
         int sum = 0;
         int counter = 0;
         for (Card hand1 : hand) {
             for (Card hand2 : hand) {
-                if (hand1.getRank() == hand2.getRank()) {
+                if (hand1.getRank() == hand2.getRank()) 
                     counter++;
-                }
             }
             if (counter > 1)
                 sum++;
                 counter = 0;
         }
         return sum == 4;
+    }
+
+    private boolean checkIfPair() {
+        int sum = 0;
+        int counter = 0;
+        for(Card hand1 : hand){
+            for(Card hand2 : hand) {
+                if(hand1.getRank() == hand2.getRank())
+                    counter++;
+            }
+            if (counter > 1)
+                sum++;
+                counter = 0;
+        }
+        return sum == 2;
+    }
+
+    private boolean checkIfThreeOfAKind() {
+        int sum = 0;
+        int counter = 0;
+        for(Card hand1 : hand){
+            for(Card hand2 : hand) {
+                if(hand1.getRank() == hand2.getRank())
+                    counter++;
+            }
+            if (counter > 1)
+                sum++;
+                counter = 0;
+        }
+        return sum == 3;
+    }
+
+    private boolean checkIfFullHouse() {
+        Arrays.sort(hand);
+        return ((hand[0].getRank() == hand[1].getRank()) && (hand[0].getRank() == hand[2].getRank())) && (hand[3].getRank() == hand[4].getRank()) ||
+                (hand[0].getRank() == hand[1].getRank()) && ((hand[2].getRank() == hand[3].getRank()) && (hand[2].getRank() == hand[4].getRank()));
+    }
+
+    private boolean checkIfFourOfAKind() {
+        Arrays.sort(hand);
+        return ((hand[0].getRank() == hand[1].getRank()) && (hand[0].getRank() == hand[2].getRank())) && (hand[0].getRank() == hand[3].getRank()) ||
+                (hand[1].getRank() == hand[2].getRank()) && ((hand[1].getRank() == hand[3].getRank()) && (hand[1].getRank() == hand[4].getRank()));
     }
 }

@@ -2,7 +2,7 @@ package pokerhandanalyser;
 
 /**
 *
-* @author Hannu Havila
+* @author HanHav
 */
 
 public class Card implements Comparable <Card> {
@@ -13,16 +13,16 @@ public class Card implements Comparable <Card> {
  
     int suit, rank;
     
-    public Card (int suit, int rank) {
+    protected Card (int suit, int rank) {
 	this.suit = suit;
 	this.rank = rank;
     }
 
-    public int getSuit() {
+    protected int getSuit() {
     	return suit;
     }
 
-    public int getRank(){
+    protected int getRank(){
     	return rank;
     }
 
